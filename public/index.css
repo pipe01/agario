@@ -1,0 +1,39 @@
+body {
+  font-family: 'Abel', "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.menu {
+    width: 20%;
+    height: 50%;
+    background-color: gray;
+
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin: auto;
+
+    visibility: hidden;
+}
+
+.scoreboard {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 150px;
+  border: 3px solid rgba(100, 100, 100, 0.5);
+  background: rgba(200, 200, 200, 0.5);
+  border-radius: 10px;
+}
+
+tr.you {
+  color: cyan;
+}
+
+#holder {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

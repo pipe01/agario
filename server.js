@@ -9,7 +9,19 @@ charm.reset();
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
-var prompt = require('prompt');
+var isprompt = function moduleAvailable(name) {
+    try {
+        require.resolve(name);
+        return true;
+    } catch(e){}
+    return false;
+}("prompt");
+
+var prompt;
+if (isprompt)
+{
+  prompt = require('prompt');
+}
 
 function NetBlob(x, y, r, id, name, cr, cg, cb)
 {
@@ -241,5 +253,6 @@ function command()
 http.listen(server_port, server_ip_address, function() {
   console.log("server start at port 3000");
 
-  command();
+  if (isprompt)
+    command();
  });
